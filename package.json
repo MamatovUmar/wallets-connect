@@ -4,8 +4,10 @@
   "main": "./src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/walletconnect/walletconnect-monorepo.git"
+    "url": "git+https://github.com/MamatovUmar/wallets-connect"
   },
+  "author": "Mamatov Umar",
+  "homepage": "https://github.com/MamatovUmar/wallets-connect",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
