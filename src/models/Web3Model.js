@@ -10,29 +10,26 @@ class Web3Model {
         this.walletConnect = new WalletConnect();
         this.provider = null;
         this.wallets = data.wallets;
+        this.web3 = null;
+        this.walletAddress = null;
+        this.request = null;
     }
 
     async connect(walletName, rpc = null) {
-        let walletAddress = null;
-        let web3 = null;
-
         if(walletName === 'WalletConnect'){
             this.provider = this.walletConnect.init(rpc || data.rpc);
-            walletAddress = await this.walletConnect.connect();
+            this.walletAddress = await this.walletConnect.connect();
         } else if(walletName === 'Metamask') {
             this.provider = await this.metamask.init();
-            walletAddress = await this.metamask.connect();
+            this.walletAddress = await this.metamask.connect();
         }
 
         if(this.provider){
-            web3 = new Web3(this.provider)
+            this.web3 = new Web3(this.provider)
+            this.request = this.provider.request
         }
 
-        return {
-            provider: this.provider,
-            account: walletAddress,
-            web3
-        }
+        return this.walletAddress
     }
 }
 
