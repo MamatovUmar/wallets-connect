@@ -1,8 +1,8 @@
-# eth-wallets-connect
+# wallets-connect
 
 ## Setup
 ```bash
-$ yarn add 'eth-wallets-connect'
+yarn add wallets-connect
 ```
 
 ### in plugin eth.js
@@ -54,8 +54,8 @@ $eth.provider   -  Provider object
 ```js
 /**
  connect method takes 2 arguments:
-   -wallet name (Required)
-   -rpc (Optional. Only for WalletConnect)
+   - wallet name (Required)
+   - rpc (Optional. Only for WalletConnect)
  */
 async connect(wallet){
     const walletAddress = await this.$eth.connect(wallet.name)
