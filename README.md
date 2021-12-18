@@ -1,5 +1,9 @@
 # wallets-connect
 
+Wallets:
+ - Metamask
+ - WalletConnect
+
 ## Setup
 ```bash
 yarn add wallets-connect
